@@ -13,7 +13,7 @@ const DraggerComponent = ({
   onChange,
 }) => {
   const handleRemove = (file) => {
-    if (userState == userDetailsSetOne.fileReturnDocuments) {
+    if (userState === userDetailsSetOne.fileReturnDocuments) {
       const newFileList = userDetailsSetOne.fileReturnDocuments.filter(
         (item) => item !== file
       );
@@ -22,7 +22,7 @@ const DraggerComponent = ({
         fileReturnDocuments: newFileList,
       }));
     }
-    if (userState == userDetailsSetOne.sCorpDocuments) {
+    if (userState === userDetailsSetOne.sCorpDocuments) {
       const newFileList = userDetailsSetOne.sCorpDocuments.filter(
         (item) => item !== file
       );
@@ -31,7 +31,7 @@ const DraggerComponent = ({
         sCorpDocuments: newFileList,
       }));
     }
-    if (userState == userDetailsSetOne.shareHoldDocuments) {
+    if (userState === userDetailsSetOne.shareHoldDocuments) {
       const newFileList = userDetailsSetOne.shareHoldDocuments.filter(
         (item) => item !== file
       );
@@ -40,7 +40,7 @@ const DraggerComponent = ({
         shareHoldDocuments: newFileList,
       }));
     }
-    if (userState == userDetailsSetOne.transactionDocuments) {
+    if (userState === userDetailsSetOne.transactionDocuments) {
       const newFileList = userDetailsSetOne.transactionDocuments.filter(
         (item) => item !== file
       );
@@ -49,7 +49,7 @@ const DraggerComponent = ({
         transactionDocuments: newFileList,
       }));
     }
-    if (userState == userDetailsSetOne.FinalDocuments) {
+    if (userState === userDetailsSetOne.FinalDocuments) {
       const newFileList = userDetailsSetOne.FinalDocuments.filter(
         (item) => item !== file
       );
@@ -63,31 +63,31 @@ const DraggerComponent = ({
   const props = {
     multiple: true,
     beforeUpload: (file) => {
-      if (userState == userDetailsSetOne.fileReturnDocuments) {
+      if (userState === userDetailsSetOne.fileReturnDocuments) {
         setUserDetailsSetOne((prevDetails) => ({
           ...prevDetails,
           fileReturnDocuments: [...prevDetails.fileReturnDocuments, file],
         }));
       }
-      if (userState == userDetailsSetOne.sCorpDocuments) {
+      if (userState === userDetailsSetOne.sCorpDocuments) {
         setUserDetailsSetOne((prevDetails) => ({
           ...prevDetails,
           sCorpDocuments: [...prevDetails.sCorpDocuments, file],
         }));
       }
-      if (userState == userDetailsSetOne.shareHoldDocuments) {
+      if (userState === userDetailsSetOne.shareHoldDocuments) {
         setUserDetailsSetOne((prevDetails) => ({
           ...prevDetails,
           shareHoldDocuments: [...prevDetails.shareHoldDocuments, file],
         }));
       }
-      if (userState == userDetailsSetOne.transactionDocuments) {
+      if (userState === userDetailsSetOne.transactionDocuments) {
         setUserDetailsSetOne((prevDetails) => ({
           ...prevDetails,
           transactionDocuments: [...prevDetails.transactionDocuments, file],
         }));
       }
-      if (userState == userDetailsSetOne.FinalDocuments) {
+      if (userState === userDetailsSetOne.FinalDocuments) {
         setUserDetailsSetOne((prevDetails) => ({
           ...prevDetails,
           FinalDocuments: [...prevDetails.FinalDocuments, file],

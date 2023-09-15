@@ -34,7 +34,7 @@ const FullPageModal = ({
   ];
 
   const onFinish = (values) => {
-    console.log(userDetailsSetOne, "JHSHAS", values);
+    console.log(userDetailsSetOne);
   };
 
   const handleSubmit = () => {
@@ -81,19 +81,19 @@ const FullPageModal = ({
     if (!userDetailsSetOne.email || !emailRegex) {
       check = false;
     }
-    if (userDetailsSetOne.fileReturnRadio == "yes") {
+    if (userDetailsSetOne.fileReturnRadio === "yes") {
       if (userDetailsSetOne.fileReturnDocuments.length < 1) {
         check = false;
         setSaved(false);
       }
     }
-    if (userDetailsSetOne.sCorpRadio == "yes") {
+    if (userDetailsSetOne.sCorpRadio === "yes") {
       if (userDetailsSetOne.sCorpDocuments.length < 1) {
         check = false;
         setSaved(false);
       }
     }
-    if (userDetailsSetOne.ownerShipRadio == "yes") {
+    if (userDetailsSetOne.ownerShipRadio === "yes") {
       if (userDetailsSetOne.shareHoldDocuments.length < 1) {
         check = false;
         setSaved(false);
@@ -110,19 +110,19 @@ const FullPageModal = ({
   const handleNext = () => {
 
 
-    if (userDetailsSetOne.fileReturnRadio == "yes") {
+    if (userDetailsSetOne.fileReturnRadio === "yes") {
       if (!userDetailsSetOne.fileReturnDocuments.length ) {
 
         setSaved(false);
       }
     }
-    if (userDetailsSetOne.sCorpRadio == "yes") {
+    if (userDetailsSetOne.sCorpRadio === "yes") {
       if (userDetailsSetOne.sCorpDocuments.length) {
   
         setSaved(false);
       }
     }
-    if (userDetailsSetOne.ownerShipRadio == "yes") {
+    if (userDetailsSetOne.ownerShipRadio === "yes") {
       if (!userDetailsSetOne.shareHoldDocuments.length) {
 
         setSaved(false);
@@ -137,7 +137,7 @@ const FullPageModal = ({
   };
 
   const handleSecondSave = () =>{
-    if(userDetailsSetOne.FinalCheckbox.length == userDetailsSetOne.FinalDocuments.length){
+    if(userDetailsSetOne.FinalCheckbox.length === userDetailsSetOne.FinalDocuments.length){
     message.success("Saved Successfully")
     }
     else if(!userDetailsSetOne.FinalCheckbox.length){
@@ -158,19 +158,19 @@ const FullPageModal = ({
   const handleRadioChange = (e) => {
     const value = e.target.value;
 
-    if (e.target.name == "question1") {
+    if (e.target.name === "question1") {
       setUserDetailsSetOne((prevDetails) => ({
         ...prevDetails,
         fileReturnRadio: value,
       }));
     }
-    if (e.target.name == "question2") {
+    if (e.target.name === "question2") {
       setUserDetailsSetOne((prevDetails) => ({
         ...prevDetails,
         sCorpRadio: value,
       }));
     }
-    if (e.target.name == "question3") {
+    if (e.target.name === "question3") {
       setUserDetailsSetOne((prevDetails) => ({
         ...prevDetails,
         ownerShipRadio: value,
@@ -178,11 +178,7 @@ const FullPageModal = ({
     }
   };
 
-  useEffect(() => {
-    // console.log(userDetailsSetOne, "SJAHSUHU");
-    console.log(data,"HI ANN")
-  }, [data]);
-
+ 
   useEffect(() => {
     const errorElement = document.querySelector(".ant-form-item-explain-error");
     if (errorElement) {
@@ -223,7 +219,7 @@ const FullPageModal = ({
       <Form onFinish={onFinish} layout="vertical">
         {/* Section 1 */}
 
-        {section == 1 && (
+        {section === 1 && (
           <>
             <Form.Item
               label="Email"
@@ -247,8 +243,6 @@ const FullPageModal = ({
 
             <Form.Item
               label="Did you file the returns last year?"
-              // name="question"
-              // rules={[{ required: true, message: "Please select an option" }]}
             >
               <RadioGroup
                 value={userDetailsSetOne.fileReturnRadio}
@@ -280,7 +274,6 @@ const FullPageModal = ({
             )}
             <Form.Item
               label="Did you file the returns last year?"
-              // name="question2"
             >
               <RadioGroup
                 value={userDetailsSetOne.sCorpRadio}
@@ -341,7 +334,6 @@ const FullPageModal = ({
               </Form.Item>
             )}
 
-            {/* Save Button */}
             <Form.Item style={{ textAlign: "right", paddingRight: "8px" }}>
               <Button
                 className="custom_button"
@@ -360,7 +352,7 @@ const FullPageModal = ({
 
         {/* Section 2 */}
 
-        {section == 2 && (
+        {section === 2 && (
           <>
             <Form.Item
               name="checkboxGroup"
