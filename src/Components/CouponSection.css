@@ -1,0 +1,24 @@
+.couponbox{
+    display: flex;
+    flex-direction: column;
+}
+.coupon{
+    display: flex;
+    justify-content: space-between;
+}
+.coupon_top{
+    margin:50px  0px;
+}
+.amount{
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.Enter_coupon{
+    margin-bottom: 15px;
+}
+.couply_apply{
+    display: flex;
+    gap: 7px;
+}

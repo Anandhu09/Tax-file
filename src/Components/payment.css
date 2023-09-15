@@ -1,0 +1,25 @@
+.payment_top{
+    margin:20px 0px 50px 0px;
+}
+
+.paid{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:25px; 
+}
+img{
+background-color: black;
+border-radius: 15px;
+width: 60px !important;
+height:60px !important;
+}
+.paidbox{
+    display: flex;
+    align-items: center;
+    gap:25px;
+}
+
+.amount{
+    margin-right: 20px;
+}
